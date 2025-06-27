@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Climático - Cultivo de Café</title>
+    <link rel="stylesheet" href="Calendario2.css" />
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header class="header">
+      <div class="nav-container">
+        <div class="logo">
+          <div class="logo-icon">
+            <a href="Principal.html" class="logo-icon"
+              ><img
+                src="images/KURONA PNG logo.png"
+                height="50px"
+                width="50px"
+                alt="logo"
+            /></a>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <div class="nav-item">
+            <span>Donacion</span>
+            <svg
+              class="chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </div>
+          <div class="nav-item">
+            <span>Recomendaciones</span>
+            <svg
+              class="chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </div>
+          <div class="nav-item">
+            <span>Calendario</span>
+            <svg
+              class="chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </div>
+        </nav>
+
+        <div class="menu-toggle">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Weather Dashboard -->
+    <main class="weather-dashboard">
+      <!-- Today's Weather Section -->
+      <section class="today-weather">
+        <div class="weather-content">
+          <div class="left-section">
+            <h2 class="section-title">Clima de hoy:</h2>
+            <div class="cloud-icon">
+              <svg viewBox="0 0 200 120" fill="none">
+                <path
+                  d="M50 80 Q30 60 50 40 Q80 30 100 40 Q120 20 150 40 Q170 50 160 70 Q180 70 170 90 L60 90 Q40 90 50 80 Z"
+                  fill="#E6F3FF"
+                  stroke="#B8D4F0"
+                  stroke-width="2"
+                />
+                <path
+                  d="M70 70 Q55 55 70 40 Q90 30 110 40 Q125 35 135 45 Q145 50 140 65 Q150 65 145 75 L80 75 Q60 75 70 70 Z"
+                  fill="#F0F8FF"
+                  stroke="#D1E7FF"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div class="center-section">
+            <div class="main-temperature">21°C</div>
+            <div class="humidity">Humedad 87%</div>
+          </div>
+
+          <div class="right-section">
+            <div class="weather-details">
+              <div class="detail-item">
+                <span class="detail-label">Temp máx</span>
+                <span class="detail-value">23°</span>
+                <svg class="temp-icon high" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2 L16 6 L12 10 L8 6 Z" fill="#FF6B6B" />
+                </svg>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Temp min</span>
+                <span class="detail-value">18°</span>
+                <svg class="temp-icon low" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 22 L8 18 L12 14 L16 18 Z" fill="#4DABF7" />
+                </svg>
+              </div>
+              <div class="detail-item wind">
+                <span class="detail-label">Viento</span>
+                <span class="detail-value">5km/h</span>
+                <svg class="wind-icon" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M2 12 Q8 8 14 12 Q20 16 14 12"
+                    stroke="#74C0FC"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M4 8 Q8 6 12 8"
+                    stroke="#74C0FC"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M6 16 Q10 18 14 16"
+                    stroke="#74C0FC"
+                    stroke-width="1.5"
+                  />
+                </svg>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Nublado</span>
+                <span class="detail-value">86%</span>
+                <svg class="cloud-small" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M6 16 Q4 14 6 12 Q9 10 12 12 Q15 9 18 12 Q20 13 19 16 L7 16 Q5 16 6 16 Z"
+                    fill="#B8D4F0"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coffee plant decoration -->
+        <div class="coffee-plant-bg">
+          <svg viewBox="0 0 300 200" fill="none">
+            <g opacity="0.1">
+              <!-- Coffee plant stems and leaves -->
+              <path
+                d="M50 180 Q60 120 80 100 Q100 80 120 90"
+                stroke="#2D5016"
+                stroke-width="3"
+              />
+              <path
+                d="M120 90 Q140 70 160 80 Q180 90 200 70"
+                stroke="#2D5016"
+                stroke-width="2"
+              />
+
+              <!-- Coffee leaves -->
+              <ellipse
+                cx="70"
+                cy="130"
+                rx="15"
+                ry="25"
+                fill="#4A7C59"
+                transform="rotate(-20 70 130)"
+              />
+              <ellipse
+                cx="90"
+                cy="110"
+                rx="12"
+                ry="20"
+                fill="#5D8B6A"
+                transform="rotate(15 90 110)"
+              />
+              <ellipse
+                cx="140"
+                cy="85"
+                rx="18"
+                ry="28"
+                fill="#4A7C59"
+                transform="rotate(-45 140 85)"
+              />
+              <ellipse
+                cx="170"
+                cy="95"
+                rx="14"
+                ry="22"
+                fill="#5D8B6A"
+                transform="rotate(30 170 95)"
+              />
+
+              <!-- Coffee berries -->
+              <circle cx="75" cy="125" r="4" fill="#DC143C" />
+              <circle cx="95" cy="105" r="3" fill="#B22222" />
+              <circle cx="145" cy="80" r="4" fill="#DC143C" />
+              <circle cx="165" cy="90" r="3" fill="#B22222" />
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <!-- 3-Day Forecast -->
+      <section class="forecast-section">
+        <!-- Friday -->
+        <div class="forecast-card friday">
+          <div class="forecast-header">
+            <h3>Viernes</h3>
+          </div>
+          <div class="forecast-temp">24°C</div>
+          <div class="forecast-humidity">Humedad 97%</div>
+          <div class="forecast-icon">
+            <svg viewBox="0 0 120 80" fill="none">
+              <path
+                d="M30 60 Q20 45 30 30 Q45 20 60 30 Q75 15 90 30 Q100 35 95 50 Q105 50 100 65 L40 65 Q25 65 30 60 Z"
+                fill="#E6F3FF"
+                stroke="#B8D4F0"
+                stroke-width="1.5"
+              />
+              <path
+                d="M40 50 Q32 38 40 28 Q52 20 65 28 Q72 25 78 32 Q82 36 80 45 Q85 45 82 52 L48 52 Q35 52 40 50 Z"
+                fill="#F0F8FF"
+                stroke="#D1E7FF"
+                stroke-width="1"
+              />
+            </svg>
+          </div>
+          <div class="coffee-plant-small">
+            <svg viewBox="0 0 100 60" fill="none">
+              <g opacity="0.15">
+                <path
+                  d="M20 50 Q30 30 50 35"
+                  stroke="#2D5016"
+                  stroke-width="2"
+                />
+                <ellipse
+                  cx="35"
+                  cy="40"
+                  rx="8"
+                  ry="12"
+                  fill="#4A7C59"
+                  transform="rotate(-30 35 40)"
+                />
+                <circle cx="40" cy="38" r="2" fill="#DC143C" />
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Saturday -->
+        <div class="forecast-card saturday">
+          <div class="forecast-header">
+            <h3>Sábado</h3>
+          </div>
+          <div class="forecast-temp">19°C</div>
+          <div class="forecast-humidity">Humedad 85%</div>
+          <div class="forecast-icon">
+            <svg viewBox="0 0 120 80" fill="none">
+              <path
+                d="M25 55 Q15 42 25 28 Q40 18 55 28 Q70 13 85 28 Q95 33 90 48 Q100 48 95 60 L35 60 Q20 60 25 55 Z"
+                fill="#FFF8DC"
+                stroke="#F0E68C"
+                stroke-width="1.5"
+              />
+              <path
+                d="M35 45 Q27 35 35 25 Q47 17 60 25 Q67 22 73 29 Q77 33 75 42 Q80 42 77 49 L43 49 Q30 49 35 45 Z"
+                fill="#FFFACD"
+                stroke="#F5DEB3"
+                stroke-width="1"
+              />
+            </svg>
+          </div>
+          <div class="coffee-plant-small">
+            <svg viewBox="0 0 100 60" fill="none">
+              <g opacity="0.15">
+                <path
+                  d="M25 50 Q35 25 55 30"
+                  stroke="#2D5016"
+                  stroke-width="2"
+                />
+                <ellipse
+                  cx="40"
+                  cy="35"
+                  rx="10"
+                  ry="15"
+                  fill="#5D8B6A"
+                  transform="rotate(20 40 35)"
+                />
+                <circle cx="42" cy="32" r="2" fill="#B22222" />
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Sunday -->
+        <div class="forecast-card sunday">
+          <div class="forecast-header">
+            <h3>Domingo</h3>
+          </div>
+          <div class="forecast-temp">20°C</div>
+          <div class="forecast-humidity">Humedad 90%</div>
+          <div class="forecast-icon">
+            <svg viewBox="0 0 120 80" fill="none">
+              <path
+                d="M28 58 Q18 44 28 30 Q43 20 58 30 Q73 15 88 30 Q98 35 93 50 Q103 50 98 62 L38 62 Q23 62 28 58 Z"
+                fill="#E6F3FF"
+                stroke="#B8D4F0"
+                stroke-width="1.5"
+              />
+              <path
+                d="M38 48 Q30 37 38 27 Q50 19 63 27 Q70 24 76 31 Q80 35 78 44 Q83 44 80 51 L46 51 Q33 51 38 48 Z"
+                fill="#F0F8FF"
+                stroke="#D1E7FF"
+                stroke-width="1"
+              />
+            </svg>
+          </div>
+          <div class="coffee-plant-small">
+            <svg viewBox="0 0 100 60" fill="none">
+              <g opacity="0.15">
+                <path
+                  d="M30 50 Q40 30 60 35"
+                  stroke="#2D5016"
+                  stroke-width="2"
+                />
+                <ellipse
+                  cx="45"
+                  cy="40"
+                  rx="9"
+                  ry="14"
+                  fill="#4A7C59"
+                  transform="rotate(-15 45 40)"
+                />
+                <circle cx="48" cy="37" r="2" fill="#DC143C" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
