@@ -72,8 +72,230 @@
       </div>
     </main>
 
+    <!-- Language Selector - MODIFICADO -->
     <div class="language-selector">
-      <a href="#">IDIOMA</a>
+      <button class="language-btn" id="languageBtn">
+        <span class="language-flag" id="currentFlag">🇪🇸</span>
+        <span id="currentLang">ESPAÑOL</span>
+      </button>
     </div>
+
+    <!-- Modal del menú de idiomas -->
+    <div class="language-modal" id="languageModal">
+      <div class="modal-overlay" id="modalOverlay"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modalTitle">Selecciona tu idioma</h2>
+          <button class="close-btn" id="closeBtn">×</button>
+        </div>
+
+        <div class="language-options">
+          <div class="language-option active" data-lang="es">
+            <span class="flag">🇪🇸</span>
+            <span>Español</span>
+            <span class="check">✓</span>
+          </div>
+          <div class="language-option" data-lang="en">
+            <span class="flag">🇺🇸</span>
+            <span>English</span>
+            <span class="check">✓</span>
+          </div>
+          <div class="language-option" data-lang="qu">
+            <span class="flag">🏔️</span>
+            <span>Quechua</span>
+            <span class="check">✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const languageBtn = document.getElementById("languageBtn");
+        const languageModal = document.getElementById("languageModal");
+        const modalOverlay = document.getElementById("modalOverlay");
+        const closeBtn = document.getElementById("closeBtn");
+        const currentLang = document.getElementById("currentLang");
+        const currentFlag = document.getElementById("currentFlag");
+        const languageOptions = document.querySelectorAll(".language-option");
+
+        // Elementos a traducir
+        const elements = {
+          brandName: document.getElementById("brandName"),
+          brandSubtitle: document.getElementById("brandSubtitle"),
+          formTitle: document.getElementById("formTitle"),
+          emailInput: document.getElementById("emailInput"),
+          passwordInput: document.getElementById("passwordInput"),
+          forgotPassword: document.getElementById("forgotPassword"),
+          loginBtn: document.getElementById("loginBtn"),
+          orSeparator: document.getElementById("orSeparator"),
+          googleText: document.getElementById("googleText"),
+          facebookText: document.getElementById("facebookText"),
+          noAccount: document.getElementById("noAccount"),
+          registerBtn: document.getElementById("registerBtn"),
+          modalTitle: document.getElementById("modalTitle"),
+        };
+
+        // Traducciones
+        const translations = {
+          es: {
+            brandName: "Kurōna",
+            brandSubtitle: "CRAFTED COFFEE",
+            formTitle: "Inicia Sesión",
+            emailPlaceholder: "CORREO ELECTRONICO",
+            passwordPlaceholder: "CONTRASEÑA",
+            forgotPassword: "¿OLVIDÓ SU CONTRASEÑA?",
+            loginBtn: "INICIA SESION",
+            orSeparator: "O INGRESA CON:",
+            googleText: "GOOGLE",
+            facebookText: "FACEBOOK",
+            noAccount: "¿NO TIENE UNA CUENTA?",
+            registerBtn: "REGISTRESE",
+            modalTitle: "Selecciona tu idioma",
+            langName: "ESPAÑOL",
+            flag: "🇪🇸",
+          },
+          en: {
+            brandName: "Kurōna",
+            brandSubtitle: "CRAFTED COFFEE",
+            formTitle: "Sign In",
+            emailPlaceholder: "EMAIL ADDRESS",
+            passwordPlaceholder: "PASSWORD",
+            forgotPassword: "FORGOT YOUR PASSWORD?",
+            loginBtn: "SIGN IN",
+            orSeparator: "OR SIGN IN WITH:",
+            googleText: "GOOGLE",
+            facebookText: "FACEBOOK",
+            noAccount: "DON'T HAVE AN ACCOUNT?",
+            registerBtn: "SIGN UP",
+            modalTitle: "Select your language",
+            langName: "ENGLISH",
+            flag: "🇺🇸",
+          },
+          qu: {
+            brandName: "Kurōna",
+            brandSubtitle: "CRAFTED COFFEE",
+            formTitle: "Yaykuy",
+            emailPlaceholder: "CORREO ELECTRONICO",
+            passwordPlaceholder: "YAYKUNA RIMAY",
+            forgotPassword: "¿YAYKUNA RIMAYTA QONQARQANKICHU?",
+            loginBtn: "YAYKUY",
+            orSeparator: "UTAQ KAYWAN YAYKUY:",
+            googleText: "GOOGLE",
+            facebookText: "FACEBOOK",
+            noAccount: "¿MANA CUENTAYKI KANCHU?",
+            registerBtn: "QORUY",
+            modalTitle: "Simiykita akllaway",
+            langName: "QUECHUA",
+            flag: "🏔️",
+          },
+        };
+
+        // Estado actual del idioma
+        let currentLanguage = "es";
+
+        // Marcar idioma actual como activo
+        function updateActiveLanguage() {
+          languageOptions.forEach((option) => {
+            if (option.dataset.lang === currentLanguage) {
+              option.classList.add("active");
+            } else {
+              option.classList.remove("active");
+            }
+          });
+        }
+
+        // Abrir modal
+        languageBtn.addEventListener("click", function () {
+          languageModal.classList.add("show");
+          document.body.style.overflow = "hidden";
+          updateActiveLanguage();
+        });
+
+        // Cerrar modal - botón X
+        closeBtn.addEventListener("click", function () {
+          languageModal.classList.remove("show");
+          document.body.style.overflow = "auto";
+        });
+
+        // Cerrar modal - overlay
+        modalOverlay.addEventListener("click", function () {
+          languageModal.classList.remove("show");
+          document.body.style.overflow = "auto";
+        });
+
+        // Selección de idioma
+        languageOptions.forEach((option) => {
+          option.addEventListener("click", function () {
+            const selectedLang = this.dataset.lang;
+
+            if (selectedLang !== currentLanguage) {
+              currentLanguage = selectedLang;
+              updateLanguage(selectedLang);
+              updateActiveLanguage();
+
+              // Cerrar modal después de seleccionar
+              setTimeout(() => {
+                languageModal.classList.remove("show");
+                document.body.style.overflow = "auto";
+              }, 300);
+            }
+          });
+        });
+
+        // Función para actualizar el idioma
+        function updateLanguage(lang) {
+          const translation = translations[lang];
+
+          // Actualizar elementos con transición
+          Object.keys(elements).forEach((key) => {
+            if (elements[key]) {
+              elements[key].style.opacity = "0";
+
+              setTimeout(() => {
+                elements[key].textContent = translation[key];
+                elements[key].style.opacity = "1";
+              }, 150);
+            }
+          });
+
+          // Actualizar placeholders
+          setTimeout(() => {
+            document.getElementById("emailInput").placeholder =
+              translation.emailPlaceholder;
+            document.getElementById("passwordInput").placeholder =
+              translation.passwordPlaceholder;
+
+            // Actualizar botón de idioma
+            currentLang.textContent = translation.langName;
+            currentFlag.textContent = translation.flag;
+          }, 150);
+        }
+
+        // Cerrar modal con Escape
+        document.addEventListener("keydown", function (event) {
+          if (
+            event.key === "Escape" &&
+            languageModal.classList.contains("show")
+          ) {
+            languageModal.classList.remove("show");
+            document.body.style.overflow = "auto";
+          }
+        });
+
+        // Añadir transiciones suaves
+        Object.values(elements).forEach((element) => {
+          if (element) {
+            element.style.transition = "opacity 0.3s ease";
+          }
+        });
+
+        currentLang.style.transition = "opacity 0.3s ease";
+        currentFlag.style.transition = "opacity 0.3s ease";
+
+        // Inicializar idioma activo
+        updateActiveLanguage();
+      });
+    </script>
   </body>
 </html>
