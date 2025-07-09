@@ -6,7 +6,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #f5f3f0 0%, #e8e2db 100%);
+  background: linear-gradient(135deg, #f4f0e9 0%, #f4f0e9 100%);
   position: relative;
   display: flex;
   flex-direction: column;
