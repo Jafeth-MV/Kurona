@@ -1,0 +1,258 @@
+/* Reseteo y base */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #f5f3f0 0%, #e8e2db 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background-color: #a67548;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo-header {
+  width: 50px;
+  height: 50px;
+  background-color: #f5f3f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #8b6f47;
+}
+
+.logo-header::before {
+  font-size: 24px;
+  color: #a67548;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-item::after {
+  content: "▼";
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+.nav-item:hover {
+  color: #f0e6d2;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger-menu span {
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu:hover span {
+  background-color: #f0e6d2;
+}
+
+/* MAIN CONTENT */
+.main-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: auto;
+}
+
+/* Menu Panel */
+.menu-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+}
+
+.menu-item {
+  background: linear-gradient(135deg, #c67c4e 0%, #a67548 100%);
+  color: white;
+  padding: 25px 40px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(166, 117, 72, 0.3);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(166, 117, 72, 0.4);
+  background: linear-gradient(135deg, #d18c5e 0%, #b8865a 100%);
+}
+
+.menu-item:active {
+  transform: translateY(-2px);
+}
+
+/* Brand Panel */
+.brand-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.brand-logo img {
+  width: 400px;
+  height: 400px;
+  border: 8px solid #a67548;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f5f3f0 0%, #e8e2db 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.brand-name {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+}
+
+.brand-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #6b5437;
+  text-transform: uppercase;
+}
+
+/* Background Decorations */
+.bg-decoration {
+  position: absolute;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.bg-decoration:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  font-size: 8rem;
+  transform: rotate(-15deg);
+}
+
+.bg-decoration:nth-child(2) {
+  bottom: 15%;
+  right: 8%;
+  font-size: 6rem;
+  transform: rotate(25deg);
+}
+
+.bg-decoration:nth-child(3) {
+  top: 60%;
+  left: 2%;
+  font-size: 4rem;
+  transform: rotate(-45deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 20px;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .main-container {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 40px;
+  }
+
+  .menu-item {
+    font-size: 24px;
+    padding: 20px 30px;
+  }
+
+  .brand-logo {
+    width: 220px;
+    height: 220px;
+  }
+
+  .coffee-cup {
+    width: 90px;
+    height: 110px;
+  }
+
+  .brand-name {
+    font-size: 2.8rem;
+  }
+
+  .brand-subtitle {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-item {
+    font-size: 20px;
+    padding: 18px 25px;
+  }
+
+  .brand-name {
+    font-size: 2.2rem;
+  }
+}

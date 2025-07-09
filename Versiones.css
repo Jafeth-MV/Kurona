@@ -1,0 +1,421 @@
+/* Reset y configuración base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 100%);
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background: #d4a574;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #f5e6d3;
+}
+
+.logo-placeholder {
+  width: 35px;
+  height: 35px;
+  background: #8b4513;
+  border-radius: 50%;
+  border: 2px solid #f5e6d3;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-item {
+  color: #f5e6d3;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+  border-bottom-color: #f5e6d3;
+}
+
+.nav-item::after {
+  content: " ▼";
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.menu-line {
+  width: 30px;
+  height: 4px;
+  background: #f5e6d3;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover .menu-line {
+  background: #ffffff;
+}
+
+/* Main Content */
+.main-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  color: #3d2914;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Search Section */
+.search-section {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-bar {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #cd853f 0%, #d4a574 100%);
+  color: #f5e6d3;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-bar::placeholder {
+  color: rgba(245, 230, 211, 0.8);
+}
+
+.search-bar:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(205, 133, 63, 0.3);
+}
+
+/* Reports List */
+.reports-container {
+  background: rgba(139, 69, 19, 0.8);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.report-item {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.report-item:last-child {
+  margin-bottom: 0;
+}
+
+.report-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.report-item.selected {
+  background: linear-gradient(135deg, #e191a8 0%, #d4759a 100%);
+  color: white;
+}
+
+.report-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #8b4513;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.report-item.selected .report-checkbox {
+  background: white;
+  border-color: white;
+}
+
+.report-checkbox.checked::after {
+  content: "✓";
+  color: #8b4513;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.report-title {
+  flex: 1;
+  font-weight: 600;
+  color: #3d2914;
+  font-size: 1.1rem;
+}
+
+.report-item.selected .report-title {
+  color: white;
+}
+
+.report-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.action-btn {
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #8b4513;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.action-btn:hover {
+  transform: scale(1.2);
+  background: rgba(139, 69, 19, 0.1);
+}
+
+.report-item.selected .action-btn {
+  color: white;
+}
+
+.report-item.selected .action-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar */
+.sidebar {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.coffee-logo {
+  width: 120px;
+  height: 120px;
+  background: #d4a574;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #f5e6d3;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.coffee-logo:hover {
+  transform: scale(1.05);
+}
+
+.coffee-cup-placeholder {
+  width: 80px;
+  height: 80px;
+  background: #8b4513;
+  border-radius: 50%;
+  border: 3px solid #f5e6d3;
+}
+
+.brand-name {
+  font-size: 2.5rem;
+  color: #3d2914;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.brand-subtitle {
+  font-size: 1rem;
+  color: #8b4513;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .brand-name {
+    font-size: 2rem;
+  }
+
+  .search-section {
+    padding: 1.5rem;
+  }
+
+  .reports-container {
+    padding: 1.5rem;
+  }
+
+  .report-item {
+    padding: 1rem 1.5rem;
+  }
+
+  .sidebar {
+    padding: 1.5rem;
+  }
+
+  .coffee-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .coffee-cup-placeholder {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .report-title {
+    font-size: 1rem;
+  }
+
+  .brand-name {
+    font-size: 1.8rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .download-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.report-item {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.report-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.report-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.report-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.report-item:nth-child(4) {
+  animation-delay: 0.4s;
+}

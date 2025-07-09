@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configuración Generales</title>
+    <link rel="stylesheet" href="Configuracion.css" />
+  </head>
+  <body>
+    <!-- Header/Navigation -->
+    <header class="header">
+      <div class="nav-container">
+        <div class="logo-container">
+          <!-- ESPACIO PARA LOGO: Reemplaza el src con tu imagen -->
+          <img src="logo-placeholder.png" alt="Logo" class="logo" />
+        </div>
+
+        <nav class="nav-menu">
+          <div class="nav-item">
+            <span>Donacion</span>
+            <span class="dropdown-arrow">▼</span>
+          </div>
+          <div class="nav-item">
+            <span>Recomendaciones</span>
+            <span class="dropdown-arrow">▼</span>
+          </div>
+          <div class="nav-item">
+            <span>Calendario</span>
+            <span class="dropdown-arrow">▼</span>
+          </div>
+        </nav>
+        <a href="Configuracion.html">
+          <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span></div
+        ></a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h1 class="page-title">Configuracion Generales</h1>
+
+      <div class="config-container">
+        <!-- Columna Izquierda -->
+        <div class="config-column">
+          <!-- Sección Idiomas -->
+          <div class="config-section">
+            <h2 class="section-title">Idiomas</h2>
+            <div class="select-container">
+              <select class="custom-select">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Sección Zona Horaria -->
+          <div class="config-section">
+            <h2 class="section-title">Zona horaria</h2>
+            <div class="select-container">
+              <select class="custom-select">
+                <option value="utc-5">UTC-5 (LIMA)</option>
+                <option value="utc-4">UTC-4</option>
+                <option value="utc-3">UTC-3</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Sección Perfil de Usuario -->
+          <div class="config-section">
+            <h2 class="section-title">Perfil de usuario</h2>
+            <p class="section-subtitle">Actualizar informacion</p>
+
+            <div class="input-group">
+              <label class="input-label">Nombre completo</label>
+              <input
+                type="text"
+                class="custom-input"
+                placeholder="Ingrese nuevo nombre"
+              />
+            </div>
+
+            <div class="input-group">
+              <label class="input-label">EMAIL</label>
+              <input
+                type="email"
+                class="custom-input"
+                placeholder="tu@email.com"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha -->
+        <div class="config-column">
+          <!-- Sección Notificaciones -->
+          <div class="config-section">
+            <h2 class="section-title">Notificaciones por email</h2>
+            <div class="select-container">
+              <select class="custom-select">
+                <option value="activado">Activado</option>
+                <option value="desactivado">Desactivado</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Sección Frecuencia -->
+          <div class="config-section">
+            <h2 class="section-title">Frecuencia de notificaciones</h2>
+            <div class="select-container">
+              <select class="custom-select">
+                <option value="diario">diario</option>
+                <option value="semanal">semanal</option>
+                <option value="mensual">mensual</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Sección Seguridad -->
+          <div class="config-section">
+            <h2 class="section-title">Seguridad</h2>
+            <p class="section-subtitle">Gestion la seguridad de tu cuenta</p>
+
+            <div class="input-group">
+              <label class="input-label">Nueva contraseña</label>
+              <input
+                type="password"
+                class="custom-input"
+                placeholder="Ingrese nuevo contraseña"
+              />
+            </div>
+
+            <div class="input-group">
+              <label class="input-label">Repetir contraseña</label>
+              <input
+                type="password"
+                class="custom-input"
+                placeholder="Repita su contraseña"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botones de Acción -->
+      <div class="action-buttons">
+        <button class="btn btn-cancel">Cancelar</button>
+        <button class="btn btn-save">Guardar cambios</button>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,389 @@
+/* Reset y configuración base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #f5f1eb 0%, #e8ddd4 100%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #faf7f2;
+  min-height: 100vh;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #cd853f 100%);
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  background: #654321;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #faf7f2;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #ffe4b5;
+}
+
+.nav-arrow {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.nav-item:hover .nav-arrow {
+  transform: rotate(180deg);
+}
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  width: 30px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: #faf7f2;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover span {
+  background: #ffe4b5;
+}
+
+/* Main Content */
+.main-content {
+  padding: 40px 30px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Chart Container */
+.chart-container {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0d5cc;
+}
+
+.chart {
+  position: relative;
+  height: 400px;
+  margin: 20px 0;
+}
+
+/* Y-axis */
+.y-axis {
+  position: absolute;
+  left: -30px;
+  top: 0;
+  height: 100%;
+  width: 20px;
+}
+
+.y-label {
+  position: absolute;
+  right: 0;
+  font-size: 14px;
+  color: #666;
+  transform: translateY(50%);
+  font-weight: 500;
+}
+
+/* Grid lines */
+.grid-lines {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+/* Bars */
+.bars {
+  display: flex;
+  align-items: first baseline;
+  height: 100%;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.bar-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.bar {
+  width: 80px;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.bar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bar-1 {
+  height: 66.67%; /* 40/60 * 100% */
+  background: linear-gradient(180deg, #654321 0%, #5a3a1e 100%);
+}
+
+.bar-2 {
+  height: 50%; /* 30/60 * 100% */
+  background: linear-gradient(180deg, #8b4513 0%, #7a3d12 100%);
+}
+
+.bar-3 {
+  height: 100%; /* 60/60 * 100% */
+  background: linear-gradient(180deg, #a0522d 0%, #8e4729 100%);
+}
+
+.bar-4 {
+  height: 75%; /* 45/60 * 100% */
+  background: linear-gradient(180deg, #cd853f 0%, #b8763a 100%);
+}
+
+.bar-value {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bar:hover .bar-value {
+  opacity: 1;
+}
+
+.bar-label {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.3;
+  max-width: 100px;
+}
+
+/* Info Section */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.description {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid #a0522d;
+}
+
+.description p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+}
+
+.coffee-image {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0d5cc;
+}
+
+.coffee-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 20px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .main-content {
+    padding: 20px 15px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .chart-container {
+    padding: 20px;
+  }
+
+  .chart {
+    height: 300px;
+  }
+
+  .bars {
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .bar {
+    width: 60px;
+  }
+
+  .bar-label {
+    font-size: 12px;
+    max-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .nav-item {
+    font-size: 16px;
+  }
+
+  .bars {
+    gap: 10px;
+    padding: 0 5px;
+  }
+
+  .bar {
+    width: 50px;
+  }
+
+  .bar-label {
+    font-size: 11px;
+    max-width: 70px;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bar {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.bar-1 {
+  animation-delay: 0.1s;
+}
+.bar-2 {
+  animation-delay: 0.2s;
+}
+.bar-3 {
+  animation-delay: 0.3s;
+}
+.bar-4 {
+  animation-delay: 0.4s;
+}

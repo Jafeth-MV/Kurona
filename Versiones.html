@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kurōna Coffee - Historial de Reportes</title>
+    <link rel="stylesheet" href="Versiones.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-nav">
+        <div class="logo">
+          <a href="Principal.html" class="logo-icon">
+            <img
+              src="images/KURONA PNG logo.png"
+              height="50px"
+              width="50px"
+              alt="logo"
+          /></a>
+        </div>
+        <nav class="nav-menu">
+          <a href="#" class="nav-item">Donación</a>
+          <a href="#" class="nav-item">Recomendaciones</a>
+          <a href="#" class="nav-item">Calendario</a>
+        </nav>
+      </div>
+      <a href="Configuracion.html">
+        <div class="menu-toggle">
+          <div class="menu-line"></div>
+          <div class="menu-line"></div>
+          <div class="menu-line"></div></div
+      ></a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h1 class="page-title">Historial de versiones de reportes</h1>
+
+      <div class="content-wrapper">
+        <div class="search-section">
+          <input
+            type="text"
+            class="search-bar"
+            placeholder="🔍 Buscar reportes ..."
+          />
+
+          <div class="reports-container">
+            <div class="report-item">
+              <div class="report-checkbox"></div>
+              <div class="report-title">
+                Reporte de Producción de café Noviembre 2024
+              </div>
+              <div class="report-actions">
+                <button class="action-btn">⋮</button>
+                <button class="action-btn">👁</button>
+                <button class="action-btn">⬇</button>
+              </div>
+            </div>
+
+            <div class="report-item selected">
+              <div class="report-checkbox checked"></div>
+              <div class="report-title">
+                Reporte de Producción de café Septiembre 2024
+              </div>
+              <div class="report-actions">
+                <button class="action-btn">⋮</button>
+                <button class="action-btn">👁</button>
+                <button class="action-btn">⬇</button>
+              </div>
+            </div>
+
+            <div class="report-item">
+              <div class="report-checkbox"></div>
+              <div class="report-title">
+                Reporte de Producción de café Agosto 2024
+              </div>
+              <div class="report-actions">
+                <button class="action-btn">⋮</button>
+                <button class="action-btn">👁</button>
+                <button class="action-btn">⬇</button>
+              </div>
+            </div>
+
+            <div class="report-item">
+              <div class="report-checkbox"></div>
+              <div class="report-title">
+                Reporte de Producción de café Julio 2024
+              </div>
+              <div class="report-actions">
+                <button class="action-btn">⋮</button>
+                <button class="action-btn">👁</button>
+                <button class="action-btn">⬇</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <div class="coffee-logo">
+            <!-- Reemplaza este div con tu logo de café -->
+
+            <img
+              src="images/KURONA PNG logo.png"
+              height="150px"
+              width="150px"
+              alt="logo"
+            />
+          </div>
+          <h2 class="brand-name">Kurōna</h2>
+          <p class="brand-subtitle">CRAFTED COFFEE</p>
+          <button class="download-btn">DESCARGAR REPORTE</button>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Funcionalidad básica para los checkboxes
+      document.querySelectorAll(".report-item").forEach((item) => {
+        item.addEventListener("click", function () {
+          // Remover selección de otros items
+          document.querySelectorAll(".report-item").forEach((otherItem) => {
+            if (otherItem !== this) {
+              otherItem.classList.remove("selected");
+              otherItem
+                .querySelector(".report-checkbox")
+                .classList.remove("checked");
+            }
+          });
+
+          // Toggle selección del item actual
+          this.classList.toggle("selected");
+          this.querySelector(".report-checkbox").classList.toggle("checked");
+        });
+      });
+
+      // Funcionalidad del botón de descarga
+      document
+        .querySelector(".download-btn")
+        .addEventListener("click", function () {
+          const selectedReport = document.querySelector(
+            ".report-item.selected"
+          );
+          if (selectedReport) {
+            const reportTitle =
+              selectedReport.querySelector(".report-title").textContent;
+            alert(`Descargando: ${reportTitle}`);
+          } else {
+            alert("Por favor selecciona un reporte para descargar");
+          }
+        });
+    </script>
+  </body>
+</html>

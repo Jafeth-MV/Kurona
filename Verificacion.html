@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificación de Inicio de Sesión - Kurōna Coffee</title>
+    <link rel="stylesheet" href="Verificacion.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <!-- Reemplaza este div con tu logo -->
+        <div class="logo-placeholder"></div>
+      </div>
+      <div class="header-right">
+        <span class="help-text">Ayuda</span>
+        <a href="Configuracion.html">
+          <div class="menu-toggle">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div></div
+        ></a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="verification-container">
+        <h1 class="page-title">Verificación de Inicio de Sesión</h1>
+
+        <div class="verification-form">
+          <p class="instruction-text">
+            Acabamos de enviar un correo de verificación al correo
+            <strong class="email-highlight">belazsusx-2@jedix.com</strong>
+            con el código de verificación
+          </p>
+
+          <div class="form-group">
+            <label for="verification-code" class="form-label"
+              >Código de verificación</label
+            >
+            <input
+              type="text"
+              id="verification-code"
+              class="verification-input"
+              placeholder="Ingresa el código aquí"
+            />
+          </div>
+
+          <p class="spam-notice">
+            Si no recibes un email en los próximos 5 minutos, revisa tu spam. Si
+            no logras encontrarlo, podemos reenviar el correo.
+          </p>
+
+          <button class="resend-btn">Reenviar código</button>
+        </div>
+
+        <div class="action-buttons">
+          <button class="back-btn">Volver</button>
+          <a href="Principal.html"
+            ><button class="confirm-btn">Confirmar</button></a
+          >
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Funcionalidad del formulario
+      document
+        .getElementById("verification-code")
+        .addEventListener("input", function () {
+          const confirmBtn = document.querySelector(".confirm-btn");
+          if (this.value.length > 0) {
+            confirmBtn.classList.add("active");
+          } else {
+            confirmBtn.classList.remove("active");
+          }
+        });
+
+      // Botón de reenvío
+      document
+        .querySelector(".resend-btn")
+        .addEventListener("click", function () {
+          this.disabled = true;
+          this.textContent = "Reenviando...";
+
+          setTimeout(() => {
+            this.disabled = false;
+            this.textContent = "Código reenviado";
+
+            setTimeout(() => {
+              this.textContent = "Reenviar código";
+            }, 2000);
+          }, 2000);
+        });
+
+      // Botón de confirmar
+      document
+        .querySelector(".confirm-btn")
+        .addEventListener("click", function () {
+          const code = document.getElementById("verification-code").value;
+          if (code.length === 0) {
+            alert("Por favor ingresa el código de verificación");
+            return;
+          }
+
+          // Aquí puedes agregar la lógica de verificación
+          alert(`Verificando código: ${code}`);
+        });
+
+      // Botón de volver
+      document
+        .querySelector(".back-btn")
+        .addEventListener("click", function () {
+          if (
+            confirm(
+              "¿Estás seguro de que quieres volver? Perderás el progreso actual."
+            )
+          ) {
+            // Aquí puedes agregar la lógica para volver a la página anterior
+            window.history.back();
+          }
+        });
+
+      // Auto-focus en el campo de código
+      document.getElementById("verification-code").focus();
+    </script>
+  </body>
+</html>
